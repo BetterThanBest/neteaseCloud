@@ -8,12 +8,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
+
 /**
  * Servlet implementation class NoodlesServlet
  */
 public class NoodlesServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	private static Logger logger=Logger.getLogger(NoodlesServlet.class);   
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -36,6 +38,7 @@ public class NoodlesServlet extends HttpServlet {
 			vegetable = "pear";
 		}
 //		response.setCharacterEncoding("utf-8");
+		 logger.debug("vegetable" + vegetable);
 
 		writer.println("<html><body>");
 		writer.println("<head><meta charset=utf-8></head>");
@@ -50,5 +53,4 @@ public class NoodlesServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
 }
